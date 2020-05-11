@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Registration Form</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<style>
+    h2{
+            margin-top: 70px;
+            font-weight: bold;
+            font-family: "Times New Roman";
+            text-shadow: 3px 0px 2px #003300;
+        }
+        form{
+            border: 1px solid;
+            padding: 10px 10px 10px 10px;
+            border-radius: 10px;
+            box-shadow: 5px 10px 15px 5px #003300;
+        }
+        .form-control{
+            margin-top: 10px;
+        }
+        a{
+            color: darkred;
+        }
+        a:hover{
+            text-decoration: none;
+            color: #1a0000;
+        }
+
+</style>
+<div class="container">
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <h2 class="text-center">
+                Please Fill Your Information
+            </h2>
+            <form method="POST">
+                {% csrf_token %}
+                {{ rform }}
+                <input type="submit" value="Register" class="form-control btn btn-success">
+                <input type="reset" value="Clear" class="form-control btn btn-danger">
+                <center><a href="/login/">Already Account?</a></center>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

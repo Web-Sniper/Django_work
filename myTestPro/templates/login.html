@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        h2{
+            margin-top: 150px;
+            font-weight: bold;
+            font-family: "Times New Roman";
+            text-shadow: 3px 0px 2px #003300;
+        }
+        form{
+            border: 1px solid;
+            padding: 10px 10px 10px 10px;
+            border-radius: 10px;
+            box-shadow: 5px 10px 15px 5px #003300;
+        }
+        .form-control{
+            margin-top: 10px;
+        }
+        a{
+            color: darkred;
+        }
+        a:hover{
+            text-decoration: none;
+            color: #1a0000;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+                <h2 class="text-center">Login Details</h2>
+                <form method="POST">
+
+                    {% csrf_token %}
+                    {{ lform }}
+                    <div class="custom-control custom-checkbox">
+                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                        <label class="custom-control-label" for="defaultUnchecked">Remember me</label>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        <span id="fp"><a href="#">Forget Password?</a></span>
+                    </div>
+                    <div>
+                        <input type="submit" value="Login" class="form-control btn btn-success">
+                    </div>
+                    <div>
+                        <center><a href="/registration/" class="text-center">New User?</a></center>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

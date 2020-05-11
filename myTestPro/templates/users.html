@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        h2{
+            margin-top: 100px;
+            font-family: "Times New Roman";
+            text-shadow: 3px 3px 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="offset-md-3 col-md-6">
+                {% if data %}
+                    <h2 class="text-center">User Details</h2>
+                    <table class="table table-bordered text-center">
+                        <thead>
+                            <tr>
+                                <th>Sno.</th>
+                                <th>User Name</th>
+                                <th>Password</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for i in data %}
+                                <tr>
+                                    <td>{{ i.id }}</td>
+                                    <td>{{ i.user }}</td>
+                                    <td>{{ i.password }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                 {% else %}
+                    <h2>No data found</h2>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
