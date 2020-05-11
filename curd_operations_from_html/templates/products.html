@@ -1,0 +1,40 @@
+<html>
+<head>
+    <title>Product</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2 class="text-center" style="margin-top: 50px;">Products</h2>
+    <table class="table table-bordered table-striped">
+        <thead>
+        <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+            <th>Product Cost</th>
+            <th>Product Color</th>
+            <th>Product Weight</th>
+        </tr>
+        </thead>
+        {% if product %}
+            {% for i in product %}
+            <tbody>
+            <tr>
+                <td>{{ i.prod_id }}</td>
+                <td>{{ i.prod_name }}</td>
+                <td>{{ i.prod_cost }}</td>
+                <td>{{ i.prod_color }}</td>
+                <td>{{ i.prod_weight }}</td>
+            </tr>
+            </tbody>
+            {% endfor %}
+        {% else %}
+        {% endif %}
+    </table>
+</div>
+</body>
+</html>
